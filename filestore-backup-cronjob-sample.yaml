@@ -11,14 +11,14 @@ kind: CronJob
 metadata:
   name: filestore-backup
 spec:
-  schedule: "*/3 * * * *"
+  schedule: "0 */1 * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
           - name: filestore-backup
-            image: <Image URL>
+            image: <docker image URL>
             imagePullPolicy: Always
             env:
               - name: GCP_GCLOUD_AUTH
